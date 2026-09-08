@@ -1,0 +1,16 @@
+{
+  "name": "nicer-watch",
+  "version": "1.0.0",
+  "description": "Nicer Watch - an interactive 3D smartwatch simulation with a live local-time dial and a /healthz endpoint.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "health": "node -e \"fetch('http://localhost:'+(process.env.PORT||3000)+'/healthz').then(r=>r.json()).then(j=>console.log(JSON.stringify(j,null,2)))\""
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": ["threejs", "3d", "watch", "simulation", "healthz"],
+  "license": "MIT",
+  "private": true
+}

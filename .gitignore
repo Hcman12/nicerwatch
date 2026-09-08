@@ -1,0 +1,12 @@
+node_modules/
+npm-debug.log*
+*.log
+
+# OS cruft
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# local overrides
+.env
+.env.local

@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <title>Nicer Watch &middot; 3D</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>&#8986;</text></svg>">
+</head>
+<body>
+  <div id="stage"></div>
+
+  <div id="loader">
+    <div class="ring"></div>
+    <p>Assembling Nicer Watch&hellip;</p>
+  </div>
+
+  <header id="brand">
+    <h1>NICER<span>WATCH</span></h1>
+    <p>Series 1 &middot; Interactive 3D simulation</p>
+  </header>
+
+  <section id="readout">
+    <div class="time" id="hudTime">--:--:--</div>
+    <div class="date" id="hudDate">&nbsp;</div>
+    <div class="zone" id="hudZone">&nbsp;</div>
+  </section>
+
+  <aside id="panel">
+    <div class="row">
+      <button id="btnRotate" class="chip" aria-pressed="true">Auto-rotate: on</button>
+      <button id="btnFace" class="chip">Face: dark</button>
+    </div>
+    <div class="row">
+      <button id="btnZoomIn" class="chip sq" title="Zoom in">+</button>
+      <button id="btnZoomOut" class="chip sq" title="Zoom out">&minus;</button>
+      <button id="btnReset" class="chip">Reset view</button>
+    </div>
+    <a id="healthChip" class="chip health" href="/healthz" target="_blank" rel="noopener">
+      <span class="dot" id="healthDot"></span><span id="healthText">checking health&hellip;</span>
+    </a>
+  </aside>
+
+  <footer id="hint">
+    <span><b>Drag</b> rotate</span>
+    <span><b>Scroll / pinch</b> zoom</span>
+    <span><b>Right-drag</b> pan</span>
+    <span><b>Double-click</b> reset</span>
+  </footer>
+
+  <div id="fallback" hidden>
+    <h2>3D engine could not load</h2>
+    <p>The Three.js runtime at <code>vendor/three.min.js</code> did not load, or this browser has no
+      WebGL. The health endpoint still works: <a href="/healthz">/healthz</a></p>
+  </div>
+
+  <script src="vendor/three.min.js"></script>
+  <script src="watch.js"></script>
+</body>
+</html>
